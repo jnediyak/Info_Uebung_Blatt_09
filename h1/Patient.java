@@ -2,8 +2,8 @@ package h1;
 
 public class Patient {
 
-	private String name;
-	private int prio;
+	String name;
+	int prio;
 	
 	public Patient(String name, int prio) {
 		this.name = name;
