@@ -10,17 +10,15 @@ public class PrioListe {
 	 * @param p
 	 */
 	public void addPatient(Patient p) {
-		for(int i = 0; i < myList.size();i++) {
-			if(myList.get(i) != null) {
-				if(myList.get(i).prio > p.prio) {
-					myList.add(i, p);
-					break;
-				}
-			} else {
-				myList.add(p);
-				break;
+		if(myList.isEmpty() || myList.getLast().prio < p.prio) myList.add(p);
+		else {
+			int i = 0;
+			while(myList.get(i).prio < p.prio) {
+				i++;
 			}
+			myList.add(i, p);
 		}
+		
 	}
 	
 	public Patient getNextPatient() {
